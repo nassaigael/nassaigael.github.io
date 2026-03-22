@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
     };
 
     return (
-        <footer className={cn('mt-20 relative', className)}>
+        <footer className={cn('mt-20 px-16 relative', className)}>
             {/* Upper Footer */}
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
