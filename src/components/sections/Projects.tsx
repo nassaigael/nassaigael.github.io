@@ -9,7 +9,6 @@ import {
     Play,
     Clock,
     ArrowRight,
-    Eye,
     Layers,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
@@ -25,7 +24,7 @@ const statusIcons = {
 export const Projects: React.FC = () => {
     const [filter, setFilter] = useState<string>('all');
     const [hoveredId, setHoveredId] = useState<number | null>(null);
-    const [expandedId, setExpandedId] = useState<number | null>(null);
+    const [expandedId] = useState<number | null>(null);
 
     const filteredProjects = projects.filter(project => {
         if (filter === 'all') return true;
