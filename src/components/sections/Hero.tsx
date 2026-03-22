@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, Github, Linkedin, Mail, ChevronRight } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Mail, ChevronRight, Code2, Database, Brain, Globe, Terminal, Cpu, Sparkles, Zap } from 'lucide-react';
 import { NeumorphButton } from '../ui/NeumorphButton';
 import { cn } from '../../utils/cn';
 import profile from "../../assets/profile.png";
@@ -13,6 +13,16 @@ const socialLinks = [
     { name: 'GitHub', icon: Github, url: 'https://github.com/gaelramahandrisoa', color: 'hover:text-gray-900 dark:hover:text-white' },
     { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/gael-ramahandrisoa', color: 'hover:text-blue-600' },
     { name: 'Email', icon: Mail, url: 'mailto:gael.ramahandrisoa@gmail.com', color: 'hover:text-red-500' },
+];
+
+const techBadges = [
+    { label: 'React', icon: Code2, color: 'text-blue-500', position: { top: '-15%', right: '-5%' }, delay: 0 },
+    { label: 'Python', icon: Terminal, color: 'text-green-500', position: { top: '15%', right: '-12%' }, delay: 0.2 },
+    { label: 'TypeScript', icon: Code2, color: 'text-blue-400', position: { top: '45%', right: '-15%' }, delay: 0.4 },
+    { label: 'Node.js', icon: Globe, color: 'text-cyan-500', position: { bottom: '15%', right: '-12%' }, delay: 0.6 },
+    { label: 'PostgreSQL', icon: Database, color: 'text-purple-500', position: { bottom: '20%', left: '-15%' }, delay: 1.2 },
+    { label: 'Java', icon: Terminal, color: 'text-pink-500', position: { top: '30%', left: '-15%' }, delay: 1.4 },
+    { label: 'Next.js', icon: Code2, color: 'text-gray-700 dark:text-gray-300', position: { top: '-8%', left: '-8%' }, delay: 1.6 },
 ];
 
 export const Hero: React.FC<HeroProps> = ({ className }) => {
@@ -43,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
         <section
             id="home"
             className={cn(
-                'relative min-h-screen px-16  flex items-center justify-center gap-12 overflow-hidden',
+                'relative min-h-screen px-16 flex items-center justify-center overflow-hidden',
                 className
             )}
         >
@@ -73,7 +83,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                     >
 
                         {/* Titre principal */}
-                        <motion.div className="space-y-4">
+                        <motion.div
+                            className="space-y-4">
                             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold">
                                 <span className="block text-gray-800 dark:text-gray-200">
                                     Gaël
@@ -112,7 +123,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                         </motion.div>
 
                         {/* Boutons CTA */}
-                        <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
+                        <motion.div
+                            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
                             <NeumorphButton
                                 variant="primary"
                                 size="lg"
@@ -142,7 +154,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                         </motion.div>
 
                         {/* Réseaux sociaux */}
-                        <motion.div className="flex gap-4 justify-center lg:justify-start mt-8">
+                        <motion.div
+                            className="flex gap-4 justify-center lg:justify-start mt-8">
                             {socialLinks.map((social, index) => (
                                 <motion.a
                                     key={social.name}
@@ -168,7 +181,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                         </motion.div>
 
                         {/* Statistiques */}
-                        <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 max-w-2xl mx-auto lg:mx-0">
+                        <motion.div
+                            className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 max-w-2xl mx-auto lg:mx-0">
                             {[
                                 { value: '2+', label: "Années d'expérience" },
                                 { value: '15+', label: 'Projets réalisés' },
@@ -198,16 +212,15 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                     <motion.div
                         initial="hidden"
                         animate="visible"
-                        className="flex justify-center items-center"
+                        className="flex ml-24 justify-center items-center relative"
                     >
                         <div className="relative">
                             {/* Effet de glow autour de l'image */}
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse" />
 
                             {/* Conteneur de l'image avec effet neumorphism */}
-                            <div className="relative neumorph-lg p-3 rounded-full">
+                            <div className="relative neumorph-lg p-3 rounded-full bg-neumorph-bg dark:bg-gray-900">
                                 <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-500/20">
-                                    {/* Image de profil */}
                                     <img
                                         src={profile}
                                         alt="Gaël RAMAHANDRISOA"
@@ -216,9 +229,32 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 </div>
                             </div>
 
-                            {/* Badge technique flottant */}
+                            {/* Tous les badges techniques autour de l'image */}
+                            {techBadges.map((badge) => (
+                                <motion.div
+                                    key={badge.label}
+                                    className="absolute neumorph-sm px-3 py-2 rounded-full flex items-center gap-2"
+                                    style={{
+                                        top: badge.position.top,
+                                        right: badge.position.right,
+                                        bottom: badge.position.bottom,
+                                        left: badge.position.left,
+                                    }}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 1 + badge.delay, duration: 0.3 }}
+                                    whileHover={{ scale: 1.1, y: -2 }}
+                                >
+                                    <badge.icon size={14} className={badge.color} />
+                                    <span className={`text-xs font-mono ${badge.color}`}>
+                                        {badge.label}
+                                    </span>
+                                </motion.div>
+                            ))}
+
+                            {/* Badge central flottant avec animation */}
                             <motion.div
-                                className="absolute -top-4 -right-4 neumorph-sm px-3 py-2 rounded-full"
+                                className="absolute -top-6 left-1/2 transform -translate-x-1/2 neumorph-sm px-4 py-2 rounded-full flex items-center gap-2"
                                 animate={{
                                     y: [0, -5, 0],
                                 }}
@@ -227,44 +263,11 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     repeat: Infinity,
                                     ease: [0.4, 0, 0.2, 1],
                                 }}
+                                initial={{ opacity: 0, y: -20 }}
                             >
-                                <span className="text-xs font-mono text-blue-600 dark:text-blue-400">
-                                    Full Stack
-                                </span>
-                            </motion.div>
-
-                            {/* Badge IA flottant */}
-                            <motion.div
-                                className="absolute -bottom-4 -left-4 neumorph-sm px-3 py-2 rounded-full"
-                                animate={{
-                                    y: [0, 5, 0],
-                                }}
-                                transition={{
-                                    duration: 2.5,
-                                    repeat: Infinity,
-                                    ease: [0.4, 0, 0.2, 1],
-                                    delay: 0.5,
-                                }}
-                            >
-                                <span className="text-xs font-mono text-purple-600 dark:text-purple-400">
-                                    IA & Data
-                                </span>
-                            </motion.div>
-
-                            {/* Badge développeur flottant */}
-                            <motion.div
-                                className="absolute top-1/2 -left-6 transform -translate-y-1/2 neumorph-sm px-3 py-2 rounded-full"
-                                animate={{
-                                    x: [0, -3, 0],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: [0.4, 0, 0.2, 1],
-                                }}
-                            >
-                                <span className="text-xs font-mono text-green-600 dark:text-green-400">
-                                    &lt;Dev&gt;
+                                <Sparkles size={14} className="text-yellow-500" />
+                                <span className="text-xs font-mono text-yellow-600 dark:text-yellow-400 font-semibold">
+                                    Passionné
                                 </span>
                             </motion.div>
                         </div>
