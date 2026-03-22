@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, Github, Linkedin, Mail, ChevronRight, Code2, Database, Brain, Globe, Terminal, Cpu, Sparkles, Zap } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Mail, ChevronRight, Code2, Database, Globe, Terminal, Sparkles } from 'lucide-react';
 import { NeumorphButton } from '../ui/NeumorphButton';
 import { cn } from '../../utils/cn';
 import profile from "../../assets/profile.png";
