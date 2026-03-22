@@ -24,10 +24,10 @@ export const NavLink: React.FC<NavLinkProps> = ({
             href={href}
             onClick={(e) => onClick(e, href)}
             className={cn(
-                'relative px-4 py-2 rounded-xl transition-all duration-300 font-medium cursor-pointer overflow-hidden group',
+                'relative px-4 py-2 rounded-xl transition-all duration-300 font-medium cursor-pointer',
                 isActive
-                    ? 'neumorph-inset text-blue-600 dark:text-blue-400'
-                    : 'neumorph-sm text-gray-700 dark:text-gray-300',
+                    ? 'neumorph-inset text-blue-600 dark:text-blue-400 font-semibold'
+                    : 'neumorph-sm text-gray-800 dark:text-gray-200 hover:shadow-neumorph-hover',
                 className
             )}
             initial={{ opacity: 0, y: -20 }}
@@ -36,12 +36,9 @@ export const NavLink: React.FC<NavLinkProps> = ({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
         >
-            {/* Effet de brillance au hover */}
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            
-            {/* Effet de soulignement premium */}
+            {/* Soulignement premium */}
             <span className={cn(
-                "absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300",
+                "absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300",
                 isActive ? "w-6" : "group-hover:w-6"
             )} />
             

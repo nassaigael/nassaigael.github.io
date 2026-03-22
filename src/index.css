@@ -2,28 +2,24 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Couleurs Light Mode (par défaut) */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  /* Couleurs personnalisées */
   --color-neumorph-bg: #e0e5ec;
-  --color-neumorph-bg-secondary: #f0f4fc;
-  --color-neumorph-element: #e0e5ec;
+  --color-neumorph-dark: #cbd0d9;
+  --color-neumorph-light: #f0f4fc;
   --color-text-primary: #1f2937;
   --color-text-secondary: #4b5563;
-  --color-text-accent: #3b82f6;
   
-  /* Ombres Light Mode */
+  /* Ombres neumorphism */
   --shadow-neumorph: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   --shadow-neumorph-sm: 9px 9px 16px #bebebe, -9px -9px 16px #ffffff;
   --shadow-neumorph-inset: inset 5px 5px 12px #bebebe, inset -5px -5px 12px #ffffff;
   --shadow-neumorph-hover: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
   
-  --font-sans: 'Inter', system-ui, sans-serif;
-  
+  /* Animations */
   --animate-float: float 6s ease-in-out infinite;
   --animate-glow: glow 3s ease-in-out infinite;
-  --animate-fade-in: fadeIn 0.5s ease-out;
-  --animate-slide-up: slideUp 0.5s ease-out;
-  --animate-slide-in-left: slideInLeft 0.5s ease-out;
-  --animate-slide-in-right: slideInRight 0.5s ease-out;
   
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -34,54 +30,15 @@
     0%, 100% { box-shadow: 0 0 5px rgba(59,130,246,0.2); }
     50% { box-shadow: 0 0 20px rgba(59,130,246,0.4); }
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
 }
 
-/* Dark mode avec sélecteur .dark */
+/* Dark mode avec classe .dark */
 .dark {
   --color-neumorph-bg: #1a1a2e;
-  --color-neumorph-bg-secondary: #16213e;
-  --color-neumorph-element: #1e1e32;
+  --color-neumorph-dark: #16213e;
+  --color-neumorph-light: #0f3460;
   --color-text-primary: #e5e7eb;
   --color-text-secondary: #9ca3af;
-  --color-text-accent: #60a5fa;
   
   --shadow-neumorph: 20px 20px 60px #0f0f1a, -20px -20px 60px #252542;
   --shadow-neumorph-sm: 9px 9px 16px #0f0f1a, -9px -9px 16px #252542;
@@ -90,12 +47,6 @@
 }
 
 @layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
   html {
     scroll-behavior: smooth;
   }
@@ -106,52 +57,49 @@
     font-family: var(--font-sans);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-  
-  /* Scrollbar personnalisée */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+}
+
+@layer base {
+  /* Améliore le rendu du texte */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   
-  ::-webkit-scrollbar-track {
-    background: var(--color-neumorph-bg-secondary);
-    border-radius: 10px;
+  /* Assure un bon contraste pour le texte */
+  .neumorph-sm,
+  .neumorph-inset {
+    color: var(--color-text-primary);
   }
   
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-text-secondary);
-    border-radius: 10px;
+  /* Force le contraste en mode light */
+  :root:not(.dark) .neumorph-sm {
+    color: #1f2937 !important;
   }
   
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-text-accent);
-  }
-  
-  /* Sélection de texte */
-  ::selection {
-    background-color: var(--color-text-accent);
-    color: white;
+  :root:not(.dark) .neumorph-inset {
+    color: #2563eb !important;
   }
 }
 
 @layer components {
-  /* Classes Neumorphism */
   .neumorph {
-    background-color: var(--color-neumorph-element);
+    background-color: var(--color-neumorph-bg);
     box-shadow: var(--shadow-neumorph);
     border-radius: 1rem;
     transition: all 0.3s ease;
   }
   
   .neumorph-sm {
-    background-color: var(--color-neumorph-element);
+    background-color: var(--color-neumorph-bg);
     box-shadow: var(--shadow-neumorph-sm);
     border-radius: 0.75rem;
     transition: all 0.3s ease;
   }
   
   .neumorph-inset {
-    background-color: var(--color-neumorph-element);
+    background-color: var(--color-neumorph-bg);
     box-shadow: var(--shadow-neumorph-inset);
     border-radius: 1rem;
     transition: all 0.3s ease;
@@ -164,153 +112,5 @@
   .neumorph-hover:hover {
     box-shadow: var(--shadow-neumorph-hover);
     transform: translateY(-2px);
-  }
-  
-  /* Boutons */
-  .btn-neumorph {
-    background-color: var(--color-neumorph-element);
-    box-shadow: var(--shadow-neumorph-sm);
-    border-radius: 0.75rem;
-    padding: 0.5rem 1.25rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-neumorph:active {
-    box-shadow: var(--shadow-neumorph-inset);
-    transform: scale(0.98);
-  }
-  
-  /* Cartes */
-  .card-neumorph {
-    background-color: var(--color-neumorph-element);
-    box-shadow: var(--shadow-neumorph);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-  }
-  
-  .card-neumorph:hover {
-    box-shadow: var(--shadow-neumorph-hover);
-  }
-  
-  /* Gradient text */
-  .gradient-text {
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-  
-  /* Container responsive */
-  .container-custom {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  @media (min-width: 640px) {
-    .container-custom {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .container-custom {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-  
-  /* Section spacing */
-  .section-padding {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-  
-  @media (min-width: 768px) {
-    .section-padding {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .section-padding {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
-  }
-  
-  /* Glassmorphism pour overlays */
-  .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .dark .glass {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-}
-
-@layer utilities {
-  /* Animations utilitaires */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .animate-glow {
-    animation: glow 3s ease-in-out infinite;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.5s ease-out;
-  }
-  
-  .animate-slide-in-left {
-    animation: slideInLeft 0.5s ease-out;
-  }
-  
-  .animate-slide-in-right {
-    animation: slideInRight 0.5s ease-out;
-  }
-  
-  /* Transitions personnalisées */
-  .transition-smooth {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* Hover effects */
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-neumorph-hover);
-  }
-  
-  /* Text truncate */
-  .text-truncate-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  .text-truncate-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 }
