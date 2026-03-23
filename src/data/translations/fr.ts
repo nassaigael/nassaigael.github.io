@@ -1,0 +1,116 @@
+export const fr = {
+    // Navigation
+    'nav.home': 'Accueil',
+    'nav.projects': 'Projets',
+    'nav.skills': 'Compétences',
+    'nav.services': 'Services',
+    'nav.contact': 'Contact',
+    
+    // Hero
+    'hero.developer': 'Développeur',
+    'hero.web_ai': 'Web & IA',
+    'hero.description': 'Développeur fullstack spécialisé Spring Boot (backend) et React.js avec TypeScript (frontend). Fort d’une formation en traitement de données, je conçois des applications web robustes et prépare des datasets de qualité pour l’IA.',
+    'hero.contact_btn': 'Me contacter',
+    'hero.cv_btn': 'Télécharger CV',
+    
+    // Statistiques
+    'stat.experience': "Années d'expérience",
+    'stat.projects': 'Projets réalisés',
+    'stat.technologies': 'Technologies maîtrisées',
+    'stat.passion': 'Passion et dévouement',
+    
+    // Services
+    'services.title': 'Mes Services',
+    'services.subtitle': 'Des solutions sur mesure pour vos projets',
+    'services.description': 'Je vous accompagne dans la réalisation de vos projets avec des services adaptés à vos besoins.',
+    'services.cta_text': 'Demander un devis',
+    'services.popular': 'Populaire',
+    'services.more_features': 'autres fonctionnalités',
+    
+    // Services - Titres
+    'services.web_dev': 'Développement Web',
+    'services.web_apps': 'Applications Web',
+    'services.ai': 'Intelligence Artificielle',
+    'services.web_scraping': 'Web Scraping',
+    'services.database': 'Base de données',
+    'services.consulting': 'Consulting Technique',
+    'services.data_processing': 'Traitement de données',
+    'services.ai_integration': 'Intégration IA',
+    
+    // Services - Descriptions
+    'services.web_dev_desc': 'Création de sites web modernes, responsives et performants avec les dernières technologies.',
+    'services.web_apps_desc': 'Développement d\'applications web full-stack avec API RESTful et bases de données.',
+    'services.ai_desc': 'Intégration de solutions IA et machine learning pour automatiser vos processus.',
+    'services.web_scraping_desc': 'Extraction et collecte de données structurées depuis des sites web.',
+    'services.database_desc': 'Conception et optimisation de bases de données pour vos applications.',
+    'services.consulting_desc': 'Conseil et accompagnement dans vos projets techniques et architecturaux.',
+    'services.data_processing_desc': 'Extraction, nettoyage et analyse de données pour vos projets.',
+    'services.ai_integration_desc': 'Intégration de modèles d\'intelligence artificielle dans vos applications.',
+    
+    // Services - Features Web Dev
+    'services.feature_react': 'React / Next.js',
+    'services.feature_typescript': 'TypeScript',
+    'services.feature_tailwind': 'TailwindCSS',
+    'services.feature_responsive': 'Responsive Design',
+    'services.feature_seo': 'SEO Optimisé',
+    
+    // Services - Features Web Apps
+    'services.feature_python': 'Python / FastAPI',
+    'services.feature_nodejs': 'Node.js',
+    'services.feature_db': 'PostgreSQL / MongoDB',
+    'services.feature_rest': 'API REST',
+    'services.feature_auth': 'Authentification',
+    
+    // Services - Features AI
+    'services.feature_nlp': 'NLP',
+    'services.feature_analytics': 'Analyse de données',
+    'services.feature_models': 'Modèles prédictifs',
+    'services.feature_chatbots': 'Chatbots',
+    'services.feature_vision': 'Vision par ordinateur',
+    
+    // Services - Features Web Scraping
+    'services.feature_beautifulsoup': 'BeautifulSoup',
+    'services.feature_selenium': 'Selenium',
+    'services.feature_scrapy': 'Scrapy',
+    'services.feature_api': 'API personnalisées',
+    'services.feature_cleaning': 'Nettoyage de données',
+    
+    // Services - Features Database
+    'services.feature_postgresql': 'PostgreSQL',
+    'services.feature_mongodb': 'MongoDB',
+    'services.feature_mysql': 'MySQL',
+    'services.feature_optimization': 'Optimisation SQL',
+    'services.feature_modeling': 'Modélisation',
+    
+    // Services - Features Consulting
+    'services.feature_architecture': 'Architecture logicielle',
+    'services.feature_review': 'Code review',
+    'services.feature_practices': 'Best practices',
+    'services.feature_audit': 'Audit technique',
+    'services.feature_training': 'Formation',
+    
+    // Services - Features Data Processing
+    'services.feature_extraction': 'Extraction de données',
+    'services.feature_cleaning_advanced': 'Nettoyage avancé',
+    'services.feature_transformation': 'Transformation',
+    'services.feature_visualization': 'Visualisation',
+    'services.feature_analysis': 'Analyse exploratoire',
+    
+    // Services - Features AI Integration
+    'services.feature_ml_models': 'Modèles ML',
+    'services.feature_deployment': 'Déploiement',
+    'services.feature_inference': 'Inférence',
+    'services.feature_monitoring': 'Monitoring',
+    'services.feature_optimization_ai': 'Optimisation',
+    
+    // Footer
+    'footer.description': 'Développeur web passionné par le traitement de données et la création d\'expériences numériques innovantes.',
+    'footer.navigation': 'Navigation',
+    'footer.services': 'Services',
+    'footer.newsletter': 'Newsletter',
+    'footer.newsletter_desc': 'Abonnez-vous pour recevoir les dernières actualités et opportunités.',
+    'footer.newsletter_placeholder': 'Votre email *',
+    'footer.copyright': '© {year} Gaël RAMAHANDRISOA. Tous droits réservés.',
+    'footer.made_with': 'Fait avec',
+    'footer.in': 'à Madagascar',
+};

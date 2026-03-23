@@ -1,5 +1,5 @@
 import { 
-    FaReact, FaPython, FaNodeJs, FaGitAlt, FaDocker, FaHtml5, FaCss3Alt,
+    FaReact, FaNodeJs, FaGitAlt, FaDocker, FaHtml5, FaCss3Alt,
     FaFigma, FaJava
 } from 'react-icons/fa';
 import { 
@@ -28,7 +28,6 @@ export const skillsData: Skill[] = [
     { id: 7, name: 'Next.js', icon: <SiNextdotjs size={28} />, iconColor: 'text-gray-900 dark:text-white', bgIcon: '▲', category: 'frontend' },
     
     // Backend
-    { id: 8, name: 'Python', icon: <FaPython size={28} />, iconColor: 'text-green-500', bgIcon: '🐍', category: 'backend' },
     { id: 9, name: 'Node.js', icon: <FaNodeJs size={28} />, iconColor: 'text-green-600', bgIcon: '🚀', category: 'backend' },
     { id: 10, name: 'Java', icon: <FaJava size={28} />, iconColor: 'text-emerald-500', bgIcon: '⚡', category: 'backend' },
     { id: 12, name: 'REST API', icon: <TbApi size={28} />, iconColor: 'text-blue-500', bgIcon: '🔌', category: 'backend' },

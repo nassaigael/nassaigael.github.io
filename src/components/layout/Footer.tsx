@@ -10,6 +10,7 @@ import {
     Send
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface FooterProps {
     className?: string;
@@ -18,28 +19,28 @@ interface FooterProps {
 const socialLinks = [
     { name: 'Facebook', icon: Facebook, url: '#', color: 'hover:text-blue-600' },
     { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/gael-ramahandrisoa', color: 'hover:text-blue-600' },
-    { name: 'GitHub', icon: Github, url: 'https://github.com/gaelramahandrisoa', color: 'hover:text-gray-900 dark:hover:text-white' },
+    { name: 'GitHub', icon: Github, url: 'https://github.com/gaelramahandrisoa', color: 'hover:text-gray-900' },
     { name: 'Instagram', icon: Instagram, url: '#', color: 'hover:text-pink-500' },
 ];
 
 const navigationLinks = [
-    { name: 'Accueil', href: '#about' },
-    { name: 'Projets', href: '#projects' },
-    { name: 'Compétences', href: '#skills' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
-
+    { nameKey: 'nav.home', href: '#home' },
+    { nameKey: 'nav.projects', href: '#projects' },
+    { nameKey: 'nav.skills', href: '#skills' },
+    { nameKey: 'nav.services', href: '#services' },
+    { nameKey: 'nav.contact', href: '#contact' },
 ];
 
 const servicesLinks = [
-    { name: 'Développement Web', href: '#services' },
-    { name: 'Traitement de données', href: '#services' },
-    { name: 'Web Scraping', href: '#services' },
-    { name: 'Intégration IA', href: '#services' },
+    { nameKey: 'services.web_dev', href: '#services' },
+    { nameKey: 'services.data_processing', href: '#services' },
+    { nameKey: 'services.web_scraping', href: '#services' },
+    { nameKey: 'services.ai_integration', href: '#services' },
 ];
 
 export const Footer: React.FC<FooterProps> = ({ className }) => {
     const currentYear = new Date().getFullYear();
+    const { t } = useLanguage();
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -50,10 +51,8 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
 
     return (
         <footer className={cn('mt-20 px-16 relative', className)}>
-            {/* Upper Footer */}
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-                    {/* About Widget */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -66,8 +65,8 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                                 GR
                             </span>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-sm mx-auto sm:mx-0">
-                            Développeur web passionné par le traitement de données et la création d'expériences numériques innovantes.
+                        <p className="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto sm:mx-0">
+                            {t('footer.description')}
                         </p>
                         <div className="flex gap-3 pt-2 justify-center sm:justify-start">
                             {socialLinks.map((social, index) => (
@@ -96,7 +95,6 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                         </div>
                     </motion.div>
 
-                    {/* Navigation Widget */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -104,13 +102,13 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="space-y-4 text-center sm:text-left"
                     >
-                        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                            Navigation
+                        <h3 className="text-lg font-semibold text-gray-200">
+                            {t('footer.navigation')}
                         </h3>
                         <ul className="space-y-2">
                             {navigationLinks.map((link, index) => (
                                 <motion.li
-                                    key={link.name}
+                                    key={link.nameKey}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
@@ -118,17 +116,16 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                                 >
                                     <a
                                         href={link.href}
-                                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center gap-2 group justify-center sm:justify-start"
+                                        className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center gap-2 group justify-center sm:justify-start"
                                     >
                                         <span className="w-1 h-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {link.name}
+                                        {t(link.nameKey)}
                                     </a>
                                 </motion.li>
                             ))}
                         </ul>
                     </motion.div>
 
-                    {/* Services Widget */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -136,13 +133,13 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="space-y-4 text-center sm:text-left"
                     >
-                        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                            Services
+                        <h3 className="text-lg font-semibold text-gray-200">
+                            {t('footer.services')}
                         </h3>
                         <ul className="space-y-2">
                             {servicesLinks.map((link, index) => (
                                 <motion.li
-                                    key={link.name}
+                                    key={link.nameKey}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
@@ -150,17 +147,16 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                                 >
                                     <a
                                         href={link.href}
-                                        className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center gap-2 group justify-center sm:justify-start"
+                                        className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center gap-2 group justify-center sm:justify-start"
                                     >
                                         <span className="w-1 h-1 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {link.name}
+                                        {t(link.nameKey)}
                                     </a>
                                 </motion.li>
                             ))}
                         </ul>
                     </motion.div>
 
-                    {/* Newsletter Widget */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -168,25 +164,24 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="space-y-4 text-center sm:text-left"
                     >
-                        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                            Newsletter
+                        <h3 className="text-lg font-semibold text-gray-200">
+                            {t('footer.newsletter')}
                         </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm mx-auto sm:mx-0">
-                            Abonnez-vous pour recevoir les dernières actualités et opportunités.
+                        <p className="text-sm text-gray-400 leading-relaxed max-w-sm mx-auto sm:mx-0">
+                            {t('footer.newsletter_desc')}
                         </p>
                         <form
                             onSubmit={(e) => {
                                 e.preventDefault();
-                                // Handle newsletter subscription
                             }}
                             className="relative max-w-sm mx-auto sm:mx-0"
                         >
                             <div className="neumorph-inset rounded-xl overflow-hidden">
                                 <input
                                     type="email"
-                                    placeholder="Votre email *"
+                                    placeholder={t('footer.newsletter_placeholder')}
                                     required
-                                    className="w-full px-4 py-3 bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 outline-none text-sm"
+                                    className="w-full px-4 py-3 bg-transparent text-gray-200 placeholder-gray-500 outline-none text-sm"
                                 />
                             </div>
                             <motion.button
@@ -202,28 +197,26 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                 </div>
             </div>
 
-            {/* Lower Footer */}
             <div className="mt-12 pt-8">
                 <div className="container mx-auto px-4 lg:px-6">
-                    <div className="neumorph-sm w-full h-px bg-linear-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" />
+                    <div className="neumorph-sm w-full h-px bg-linear-to-r from-transparent via-gray-700 to-transparent" />
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 pb-6">
-                        <p className="text-sm text-gray-500 dark:text-gray-400 text-center md:text-left">
-                            Copyright &copy; {currentYear} Gaël RAMAHANDRISOA. Tous droits réservés.
+                        <p className="text-sm text-gray-400 text-center md:text-left">
+                            {t('footer.copyright').replace('{year}', currentYear.toString())}
                         </p>
                         <div className="flex items-center gap-2">
-                            <span className="text-xs text-gray-400 dark:text-gray-500">
-                                Fait avec
+                            <span className="text-xs text-gray-500">
+                                {t('footer.made_with')}
                             </span>
                             <Heart size={12} className="text-red-500 fill-red-500 animate-pulse" />
-                            <span className="text-xs text-gray-400 dark:text-gray-500">
-                                à Madagascar
+                            <span className="text-xs text-gray-500">
+                                {t('footer.in')}
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Bouton retour en haut flottant */}
             <motion.button
                 onClick={scrollToTop}
                 className="fixed bottom-8 right-8 z-50 neumorph-sm p-3 rounded-xl transition-all duration-300 group"
