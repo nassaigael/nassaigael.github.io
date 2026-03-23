@@ -5,20 +5,20 @@ export const fr = {
     'nav.skills': 'Compétences',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
-    
+
     // Hero
     'hero.developer': 'Développeur',
     'hero.web_ai': 'Web & IA',
     'hero.description': 'Développeur fullstack spécialisé Spring Boot (backend) et React.js avec TypeScript (frontend). Fort d’une formation en traitement de données, je conçois des applications web robustes et prépare des datasets de qualité pour l’IA.',
     'hero.contact_btn': 'Me contacter',
     'hero.cv_btn': 'Télécharger CV',
-    
+
     // Statistiques
     'stat.experience': "Années d'expérience",
     'stat.projects': 'Projets réalisés',
     'stat.technologies': 'Technologies maîtrisées',
     'stat.passion': 'Passion et dévouement',
-    
+
     // Skills
     'skills.title': 'Compétences',
     'skills.technical': 'techniques',
@@ -28,7 +28,7 @@ export const fr = {
     'skills.category_database': 'Base de données',
     'skills.category_tools': 'Outils',
     'skills.category_ai': 'IA & Data',
-    
+
     // Projects
     'projects.title': 'Projets',
     'projects.recent': 'récents',
@@ -47,7 +47,7 @@ export const fr = {
     'projects.featured': 'En vedette',
     'projects.no_projects': 'Aucun projet trouvé dans cette catégorie.',
     'projects.view_more': 'Voir plus sur GitHub',
-    
+
     // Services
     'services.title': 'Mes Services',
     'services.subtitle': 'Des solutions sur mesure pour vos projets',
@@ -55,7 +55,7 @@ export const fr = {
     'services.cta_text': 'Demander un devis',
     'services.popular': 'Populaire',
     'services.more_features': 'autres fonctionnalités',
-    
+
     // Services - Titres
     'services.web_dev': 'Développement Web',
     'services.web_apps': 'Applications Web',
@@ -65,7 +65,7 @@ export const fr = {
     'services.consulting': 'Consulting Technique',
     'services.data_processing': 'Traitement de données',
     'services.ai_integration': 'Intégration IA',
-    
+
     // Services - Descriptions
     'services.web_dev_desc': 'Création de sites web modernes, responsives et performants avec les dernières technologies.',
     'services.web_apps_desc': 'Développement d\'applications web full-stack avec API RESTful et bases de données.',
@@ -75,63 +75,84 @@ export const fr = {
     'services.consulting_desc': 'Conseil et accompagnement dans vos projets techniques et architecturaux.',
     'services.data_processing_desc': 'Extraction, nettoyage et analyse de données pour vos projets.',
     'services.ai_integration_desc': 'Intégration de modèles d\'intelligence artificielle dans vos applications.',
-    
+
     // Services - Features Web Dev
     'services.feature_react': 'React / Next.js',
     'services.feature_typescript': 'TypeScript',
     'services.feature_tailwind': 'TailwindCSS',
     'services.feature_responsive': 'Responsive Design',
     'services.feature_seo': 'SEO Optimisé',
-    
+
     // Services - Features Web Apps
     'services.feature_python': 'Python / FastAPI',
     'services.feature_nodejs': 'Node.js',
     'services.feature_db': 'PostgreSQL / MongoDB',
     'services.feature_rest': 'API REST',
     'services.feature_auth': 'Authentification',
-    
+
     // Services - Features AI
     'services.feature_nlp': 'NLP',
     'services.feature_analytics': 'Analyse de données',
     'services.feature_models': 'Modèles prédictifs',
     'services.feature_chatbots': 'Chatbots',
     'services.feature_vision': 'Vision par ordinateur',
-    
+
     // Services - Features Web Scraping
     'services.feature_beautifulsoup': 'BeautifulSoup',
     'services.feature_selenium': 'Selenium',
     'services.feature_scrapy': 'Scrapy',
     'services.feature_api': 'API personnalisées',
     'services.feature_cleaning': 'Nettoyage de données',
-    
+
     // Services - Features Database
     'services.feature_postgresql': 'PostgreSQL',
     'services.feature_mongodb': 'MongoDB',
     'services.feature_mysql': 'MySQL',
     'services.feature_optimization': 'Optimisation SQL',
     'services.feature_modeling': 'Modélisation',
-    
+
     // Services - Features Consulting
     'services.feature_architecture': 'Architecture logicielle',
     'services.feature_review': 'Code review',
     'services.feature_practices': 'Best practices',
     'services.feature_audit': 'Audit technique',
     'services.feature_training': 'Formation',
-    
+
     // Services - Features Data Processing
     'services.feature_extraction': 'Extraction de données',
     'services.feature_cleaning_advanced': 'Nettoyage avancé',
     'services.feature_transformation': 'Transformation',
     'services.feature_visualization': 'Visualisation',
     'services.feature_analysis': 'Analyse exploratoire',
-    
+
     // Services - Features AI Integration
     'services.feature_ml_models': 'Modèles ML',
     'services.feature_deployment': 'Déploiement',
     'services.feature_inference': 'Inférence',
     'services.feature_monitoring': 'Monitoring',
     'services.feature_optimization_ai': 'Optimisation',
-    
+
+    // Contact
+    'contact.title': 'Parlons de',
+    'contact.subtitle': 'votre projet',
+    'contact.form_title': 'Envoyez-moi un message',
+    'contact.form_description': 'Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.',
+    'contact.name_placeholder': 'Votre nom complet',
+    'contact.email_placeholder': 'votre@email.com',
+    'contact.subject_placeholder': 'Sujet de votre message',
+    'contact.message_placeholder': 'Votre message...',
+    'contact.send': 'Envoyer le message',
+    'contact.sending': 'Envoi en cours...',
+    'contact.success': 'Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.',
+    'contact.error': 'Une erreur est survenue. Veuillez réessayer plus tard.',
+    'contact.email': 'Email',
+    'contact.phone': 'Téléphone',
+    'contact.location': 'Localisation',
+    'contact.availability': 'Disponibilité',
+    'contact.availability_hours': 'Lun - Ven, 7h - 20h',
+    'contact.available': 'Disponible',
+    'contact.ready': 'Prêt à collaborer',
+
     // Footer
     'footer.description': 'Développeur web passionné par le traitement de données et la création d\'expériences numériques innovantes.',
     'footer.navigation': 'Navigation',
