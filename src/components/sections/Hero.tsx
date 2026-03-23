@@ -116,9 +116,9 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
 
                             {/* Description */}
                             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                                Étudiant en informatique spécialisé en traitement de données,
-                                avec une expérience en web scraping et nettoyage de données.
-                                Passionné par la création de datasets pour l'IA.
+                                Développeur fullstack spécialisé Spring Boot (backend) et React.js avec TypeScript (frontend).
+                                Fort d’une formation en traitement de données, je conçois des applications web robustes et
+                                prépare des datasets de qualité pour l’IA.
                             </p>
                         </motion.div>
 
