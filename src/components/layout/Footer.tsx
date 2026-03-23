@@ -226,7 +226,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             {/* Bouton retour en haut flottant */}
             <motion.button
                 onClick={scrollToTop}
-                className="fixed bottom-8 right-8 z-50 neumorph-sm p-3 rounded-xl hover:shadow-neumorph-hover transition-all duration-300 group"
+                className="fixed bottom-8 right-8 z-50 neumorph-sm p-3 rounded-xl transition-all duration-300 group"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, scale: 0 }}
