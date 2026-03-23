@@ -73,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
     return (
         <>
             <header className={headerClasses}>
-                <div className="container mx-auto px-4 lg:px-6">
+                <div className="container mx-auto px-4 lg:px-16">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <motion.a
