@@ -13,7 +13,7 @@ export const Skills: React.FC = () => {
         : skillsData.filter(s => s.category === activeCategory);
 
     return (
-        <section id="skills" className="relative py-20 md:py-32 overflow-hidden px-4 sm:px-6 lg:px-16">
+        <section id="skills" className="relative py-12 md:py-12 overflow-hidden px-4 sm:px-6 lg:px-16">
             {/* Éléments décoratifs */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-20 right-20 w-80 h-80 bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-3xl" />
