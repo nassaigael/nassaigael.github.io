@@ -49,6 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
         },
     };
 
+    const newLocal = "text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent";
     return (
         <section
             id="home"
@@ -87,7 +88,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 <span className="block text-gray-800 dark:text-gray-200">
                                     Gaël
                                 </span>
-                                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                                <span className="block bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                                     RAMAHANDRISOA
                                 </span>
                             </h1>
@@ -98,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     Développeur
                                 </span>
                                 <motion.span
-                                    className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                                    className={newLocal}
                                     animate={{
                                         opacity: [0.5, 1, 0.5],
                                     }}
@@ -192,7 +193,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
                                     whileHover={{ scale: 1.05, y: -2 }}
                                 >
-                                    <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                    <div className="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                                         {stat.value}
                                     </div>
                                     <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -211,11 +212,11 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                     >
                         <div className="relative">
                             {/* Effet de glow autour de l'image */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse" />
+                            <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse" />
 
                             {/* Conteneur de l'image avec effet neumorphism */}
                             <div className="relative neumorph-lg p-3 rounded-full bg-neumorph-bg dark:bg-gray-900">
-                                <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+                                <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-linear-to-br from-blue-500/20 to-purple-500/20">
                                     <img
                                         src={profile}
                                         alt="Gaël RAMAHANDRISOA"
