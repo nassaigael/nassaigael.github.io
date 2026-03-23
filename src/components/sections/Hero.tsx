@@ -27,9 +27,9 @@ const techBadges = [
 
 export const Hero: React.FC<HeroProps> = ({ className }) => {
     const scrollToNext = () => {
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-            const offsetTop = aboutSection.offsetTop - 80;
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+            const offsetTop = servicesSection.offsetTop - 80;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
         <section
             id="home"
             className={cn(
-                'relative min-h-screen sm:px-16 flex items-center justify-center overflow-hidden',
+                'relative min-h-screen md:px-16 flex items-center justify-center overflow-hidden',
                 className
             )}
         >
@@ -79,17 +79,15 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="text-center lg:text-left"
+                        className="text-center lg:text-left order-2 lg:order-1"
                     >
-
                         {/* Titre principal */}
-                        <motion.div
-                            className="space-y-4">
+                        <motion.div className="space-y-4">
                             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold">
                                 <span className="block text-gray-800 dark:text-gray-200">
                                     Gaël
                                 </span>
-                                <span className="block bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                                     RAMAHANDRISOA
                                 </span>
                             </h1>
@@ -100,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     Développeur
                                 </span>
                                 <motion.span
-                                    className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                                    className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
                                     animate={{
                                         opacity: [0.5, 1, 0.5],
                                     }}
@@ -123,8 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                         </motion.div>
 
                         {/* Boutons CTA */}
-                        <motion.div
-                            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
+                        <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
                             <NeumorphButton
                                 variant="primary"
                                 size="lg"
@@ -154,8 +151,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                         </motion.div>
 
                         {/* Réseaux sociaux */}
-                        <motion.div
-                            className="flex gap-4 justify-center lg:justify-start mt-8">
+                        <motion.div className="flex gap-4 justify-center lg:justify-start mt-8">
                             {socialLinks.map((social, index) => (
                                 <motion.a
                                     key={social.name}
@@ -181,8 +177,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                         </motion.div>
 
                         {/* Statistiques */}
-                        <motion.div
-                            className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 max-w-2xl mx-auto lg:mx-0">
+                        <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 max-w-2xl mx-auto lg:mx-0">
                             {[
                                 { value: '2+', label: "Années d'expérience" },
                                 { value: '15+', label: 'Projets réalisés' },
@@ -197,7 +192,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
                                     whileHover={{ scale: 1.05, y: -2 }}
                                 >
-                                    <div className="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                    <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                                         {stat.value}
                                     </div>
                                     <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -212,15 +207,15 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                     <motion.div
                         initial="hidden"
                         animate="visible"
-                        className="flex  mt-12 sm:ml-24 justify-center items-center relative"
+                        className="flex justify-center items-center relative order-1 lg:order-2 mb-8 lg:mb-0"
                     >
                         <div className="relative">
                             {/* Effet de glow autour de l'image */}
-                            <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse" />
 
                             {/* Conteneur de l'image avec effet neumorphism */}
                             <div className="relative neumorph-lg p-3 rounded-full bg-neumorph-bg dark:bg-gray-900">
-                                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-linear-to-br from-blue-500/20 to-purple-500/20">
+                                <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-500/20">
                                     <img
                                         src={profile}
                                         alt="Gaël RAMAHANDRISOA"
@@ -233,7 +228,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                             {techBadges.map((badge) => (
                                 <motion.div
                                     key={badge.label}
-                                    className="absolute neumorph-sm px-3 py-2 rounded-full flex items-center gap-2"
+                                    className="absolute neumorph-sm px-2 py-1.5 md:px-3 md:py-2 rounded-full flex items-center gap-1 md:gap-2"
                                     style={{
                                         top: badge.position.top,
                                         right: badge.position.right,
@@ -245,8 +240,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     transition={{ delay: 1 + badge.delay, duration: 0.3 }}
                                     whileHover={{ scale: 1.1, y: -2 }}
                                 >
-                                    <badge.icon size={14} className={badge.color} />
-                                    <span className={`text-xs font-mono ${badge.color}`}>
+                                    <badge.icon size={10} className={`${badge.color} md:size-3`} />
+                                    <span className={`text-[10px] md:text-xs font-mono ${badge.color}`}>
                                         {badge.label}
                                     </span>
                                 </motion.div>
@@ -254,7 +249,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
 
                             {/* Badge central flottant avec animation */}
                             <motion.div
-                                className="absolute -top-6 left-1/2 transform -translate-x-1/2 neumorph-sm px-4 py-2 rounded-full flex items-center gap-2"
+                                className="absolute -top-6 left-1/2 transform -translate-x-1/2 neumorph-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-1 md:gap-2"
                                 animate={{
                                     y: [0, -5, 0],
                                 }}
@@ -265,8 +260,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 }}
                                 initial={{ opacity: 0, y: -20 }}
                             >
-                                <Sparkles size={14} className="text-yellow-500" />
-                                <span className="text-xs font-mono text-yellow-600 dark:text-yellow-400 font-semibold">
+                                <Sparkles size={12} className="md:size-14 text-yellow-500" />
+                                <span className="text-[10px] md:text-xs font-mono text-yellow-600 dark:text-yellow-400 font-semibold">
                                     Passionné
                                 </span>
                             </motion.div>
