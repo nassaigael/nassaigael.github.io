@@ -281,7 +281,7 @@ export const Projects: React.FC = () => {
                         href="https://github.com/nassaigael"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 neumorph-sm px-6 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:shadow-neumorph-hover transition-all duration-300"
+                        className="inline-flex items-center gap-2 neumorph-sm px-6 py-3 rounded-xl text-gray-700 dark:text-gray-300 transition-all duration-300"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
