@@ -4,6 +4,7 @@ import { ArrowDown, Download, Github, Linkedin, Mail, ChevronRight, Code2, Datab
 import { NeumorphButton } from '../ui/NeumorphButton';
 import { cn } from '../../utils/cn';
 import profile from "../../assets/profile.png";
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface HeroProps {
     className?: string;
@@ -26,6 +27,8 @@ const techBadges = [
 ];
 
 export const Hero: React.FC<HeroProps> = ({ className }) => {
+    const { t } = useLanguage();
+
     const scrollToNext = () => {
         const servicesSection = document.getElementById('services');
         if (servicesSection) {
@@ -37,7 +40,6 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
         }
     };
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -49,7 +51,13 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
         },
     };
 
-    const newLocal = "text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent";
+    const stats = [
+        { value: '2+', labelKey: 'stat.experience' },
+        { value: '15+', labelKey: 'stat.projects' },
+        { value: '10+', labelKey: 'stat.technologies' },
+        { value: '100%', labelKey: 'stat.passion' },
+    ];
+
     return (
         <section
             id="home"
@@ -58,16 +66,10 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                 className
             )}
         >
-            {/* Éléments décoratifs d'arrière-plan */}
             <div className="absolute inset-0 pointer-events-none">
-                {/* Cercles flous */}
-                <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-3xl animate-float" />
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-
-                {/* Grille technique */}
+                <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float" />
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(180deg,rgba(147,51,234,0.03)_1px,transparent_1px)] bg-size-[50px_50px]" />
-
-                {/* Points lumineux */}
                 <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-blue-500 rounded-full animate-pulse" />
                 <div className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
                 <div className="absolute top-2/3 left-1/2 w-0.5 h-0.5 bg-cyan-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
@@ -75,17 +77,15 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
 
             <div className="container mx-auto px-4 lg:px-6 py-20 md:py-32">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Texte - colonne gauche */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
                         className="text-center lg:text-left order-2 lg:order-1"
                     >
-                        {/* Titre principal */}
                         <motion.div className="space-y-4">
                             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold">
-                                <span className="block text-gray-800 dark:text-gray-200">
+                                <span className="block text-gray-200">
                                     Gaël
                                 </span>
                                 <span className="block bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -93,35 +93,24 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 </span>
                             </h1>
 
-                            {/* Typing animation */}
                             <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
-                                <span className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">
-                                    Développeur
+                                <span className="text-xl sm:text-2xl lg:text-3xl text-gray-400">
+                                    {t('hero.developer')}
                                 </span>
                                 <motion.span
-                                    className={newLocal}
-                                    animate={{
-                                        opacity: [0.5, 1, 0.5],
-                                    }}
-                                    transition={{
-                                        duration: 2,
-                                        repeat: Infinity,
-                                        ease: [0.4, 0, 0.2, 1],
-                                    }}
+                                    className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                                    animate={{ opacity: [0.5, 1, 0.5] }}
+                                    transition={{ duration: 2, repeat: Infinity, ease: [0.4, 0, 0.2, 1] }}
                                 >
-                                    Web & IA
+                                    {t('hero.web_ai')}
                                 </motion.span>
                             </div>
 
-                            {/* Description */}
-                            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                                Développeur fullstack spécialisé Spring Boot (backend) et React.js avec TypeScript (frontend).
-                                Fort d’une formation en traitement de données, je conçois des applications web robustes et
-                                prépare des datasets de qualité pour l’IA.
+                            <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                                {t('hero.description')}
                             </p>
                         </motion.div>
 
-                        {/* Boutons CTA */}
                         <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
                             <NeumorphButton
                                 variant="primary"
@@ -136,7 +125,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     }
                                 }}
                             >
-                                Me contacter
+                                {t('hero.contact_btn')}
                             </NeumorphButton>
 
                             <NeumorphButton
@@ -147,11 +136,10 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     window.open('/cv-gael-ramahandrisoa.pdf', '_blank');
                                 }}
                             >
-                                Télécharger CV
+                                {t('hero.cv_btn')}
                             </NeumorphButton>
                         </motion.div>
 
-                        {/* Réseaux sociaux */}
                         <motion.div className="flex gap-4 justify-center lg:justify-start mt-8">
                             {socialLinks.map((social, index) => (
                                 <motion.a
@@ -168,25 +156,16 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 >
                                     <social.icon
                                         size={20}
-                                        className={cn(
-                                            "transition-colors duration-300",
-                                            social.color
-                                        )}
+                                        className={cn("transition-colors duration-300", social.color)}
                                     />
                                 </motion.a>
                             ))}
                         </motion.div>
 
-                        {/* Statistiques */}
                         <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 max-w-2xl mx-auto lg:mx-0">
-                            {[
-                                { value: '2+', label: "Années d'expérience" },
-                                { value: '15+', label: 'Projets réalisés' },
-                                { value: '10+', label: 'Technologies maîtrisées' },
-                                { value: '100%', label: 'Passion et dévouement' },
-                            ].map((stat, index) => (
+                            {stats.map((stat, index) => (
                                 <motion.div
-                                    key={stat.label}
+                                    key={stat.labelKey}
                                     className="neumorph-sm p-3 text-center"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -196,26 +175,23 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                     <div className="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                                         {stat.value}
                                     </div>
-                                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                        {stat.label}
+                                    <div className="text-xs text-gray-500 mt-1">
+                                        {t(stat.labelKey)}
                                     </div>
                                 </motion.div>
                             ))}
                         </motion.div>
                     </motion.div>
 
-                    {/* Image - colonne droite */}
                     <motion.div
                         initial="hidden"
                         animate="visible"
-                        className="flex justify-center items-center relative order-1 lg:order-2 mb-8 lg:mb-0"
+                        className="flex justify-center items-center relative order-1 lg:order-2 mb-8 lg:ml-24 lg:mb-0"
                     >
                         <div className="relative">
-                            {/* Effet de glow autour de l'image */}
                             <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse" />
 
-                            {/* Conteneur de l'image avec effet neumorphism */}
-                            <div className="relative neumorph-lg p-3 rounded-full bg-neumorph-bg dark:bg-gray-900">
+                            <div className="relative neumorph-lg p-3 rounded-full bg-neumorph-bg">
                                 <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-linear-to-br from-blue-500/20 to-purple-500/20">
                                     <img
                                         src={profile}
@@ -225,7 +201,6 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 </div>
                             </div>
 
-                            {/* Tous les badges techniques autour de l'image */}
                             {techBadges.map((badge) => (
                                 <motion.div
                                     key={badge.label}
@@ -248,21 +223,14 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 </motion.div>
                             ))}
 
-                            {/* Badge central flottant avec animation */}
                             <motion.div
                                 className="absolute -top-6 left-1/2 transform -translate-x-1/2 neumorph-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-1 md:gap-2"
-                                animate={{
-                                    y: [0, -5, 0],
-                                }}
-                                transition={{
-                                    duration: 2,
-                                    repeat: Infinity,
-                                    ease: [0.4, 0, 0.2, 1],
-                                }}
+                                animate={{ y: [0, -5, 0] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: [0.4, 0, 0.2, 1] }}
                                 initial={{ opacity: 0, y: -20 }}
                             >
-                                <Sparkles size={12} className="md:size-14 text-yellow-500" />
-                                <span className="text-[10px] md:text-xs font-mono text-yellow-600 dark:text-yellow-400 font-semibold">
+                                <Sparkles size={12} className="text-yellow-500" />
+                                <span className="text-[10px] md:text-xs font-mono text-yellow-600 font-semibold">
                                     Passionné
                                 </span>
                             </motion.div>
@@ -271,7 +239,6 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                 </div>
             </div>
 
-            {/* Flèche pour scroll down */}
             <motion.button
                 onClick={scrollToNext}
                 className="absolute bottom-8 left-1/2 transform -translate-x-1/2 neumorph-sm p-3 rounded-full cursor-pointer group"
