@@ -27,7 +27,7 @@ export const NavLink: React.FC<NavLinkProps> = ({
                 'relative px-4 py-2 rounded-xl transition-all duration-300 font-medium cursor-pointer',
                 isActive
                     ? 'neumorph-inset text-blue-600 dark:text-blue-400 font-semibold'
-                    : 'neumorph-sm text-gray-800 dark:text-gray-200 hover:shadow-neumorph-hover',
+                    : 'neumorph-sm text-gray-800 dark:text-gray-200',
                 className
             )}
             initial={{ opacity: 0, y: -20 }}
