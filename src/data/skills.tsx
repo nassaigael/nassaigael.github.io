@@ -48,10 +48,10 @@ export const skillsData: Skill[] = [
 ];
 
 export const categoryConfig = {
-    frontend: { label: 'Frontend', icon: '🎨', color: 'text-blue-500' },
-    backend: { label: 'Backend', icon: '⚙️', color: 'text-green-500' },
-    database: { label: 'Base de données', icon: '🗄️', color: 'text-purple-500' },
-    tools: { label: 'Outils', icon: '🛠️', color: 'text-orange-500' }
+    frontend: { label: 'Frontend', color: 'text-blue-500' },
+    backend: { label: 'Backend', color: 'text-green-500' },
+    database: { label: 'Base de données', color: 'text-purple-500' },
+    tools: { label: 'Outils', color: 'text-orange-500' }
 };
 
 export const categories = ['all', ...new Set(skillsData.map(s => s.category))];

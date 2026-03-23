@@ -7,10 +7,9 @@ interface SkillCardProps {
     skill: Skill;
     index: number;
     hoveredId: number | null;
-    setHoveredId: (id: number | null) => void;
 }
 
-export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId, setHoveredId }) => {
+export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId }) => {
     const isHovered = hoveredId === skill.id;
 
     // Extraire la couleur de base sans le préfixe 'text-'
@@ -38,8 +37,8 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId, s
     };
 
     const colorHex = getColorValue(skill.iconColor);
-    const glowColor = `${colorHex}40`; // 40 = 25% opacity
-    const borderColor = `${colorHex}30`; // 30 = 19% opacity
+    const glowColor = `${colorHex}40`;
+    const borderColor = `${colorHex}30`;
 
     return (
         <motion.div
@@ -47,11 +46,8 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId, s
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.02 }}
-            onMouseEnter={() => setHoveredId(skill.id)}
-            onMouseLeave={() => setHoveredId(null)}
-            className="relative group"
+            className="relative group hover:scale-110 transition-all "
         >
-            {/* Icône de fond en arrière-plan */}
             <div 
                 className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none text-6xl font-bold select-none dark:opacity-10"
             >

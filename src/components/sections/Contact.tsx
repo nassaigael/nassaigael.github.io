@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, MessageCircle } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { contactInfo, socialLinks, contactForm, contactMessages } from '../../data/contact';
 
@@ -57,12 +57,6 @@ export const Contact: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 neumorph-sm px-5 py-2.5 rounded-full mb-6">
-                        <span className="text-xl">✉️</span>
-                        <span className="text-xs font-mono text-gray-600 dark:text-gray-400">
-                            Contactez-moi
-                        </span>
-                    </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                         <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                             Contact
