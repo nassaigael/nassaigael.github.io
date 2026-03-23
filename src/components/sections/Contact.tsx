@@ -85,9 +85,6 @@ export const Contact: React.FC = () => {
                         <span className="text-gray-800 dark:text-gray-200"> de votre projet</span>
                     </h2>
                     <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-5" />
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base">
-                        Une idée, un projet ? N'hésitez pas à me contacter, je serais ravi d'échanger avec vous !
-                    </p>
                 </motion.div>
 
                 {/* Formulaire élargi */}
