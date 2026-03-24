@@ -18,8 +18,8 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     const { language, setLanguage } = useLanguage();
 
     const languages = [
-        { code: 'fr', label: 'Français', flag: '🇫🇷' },
-        { code: 'en', label: 'English', flag: '🇬🇧' }
+        { code: 'fr', label: 'FR', flag: '🇫🇷' },
+        { code: 'en', label: 'EN', flag: '🇬🇧' }
     ];
 
     const currentLanguage = languages.find(lang => lang.code === language);
@@ -74,7 +74,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full right-0 mt-2 w-30 neumorph-sm rounded-xl overflow-hidden z-50"
+                        className="absolute top-full right-0 mt-2 w-22 neumorph-sm rounded-xl overflow-hidden z-50"
                     >
                         {languages.map((lang) => (
                             <button
