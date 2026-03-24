@@ -10,6 +10,7 @@ export default defineConfig({
     qrcode()
 
   ],
+  base: '/',
   server: {
     host: true,
   }
