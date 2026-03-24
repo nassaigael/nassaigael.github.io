@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, ChevronDown, Check } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -55,7 +55,16 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                 )}
                 aria-label="Changer de langue"
             >
-                <Globe size={18} className="text-blue-400" />
+                {/* Icône qui change selon la langue sélectionnée */}
+                <motion.span
+                    key={currentLanguage?.code}
+                    initial={{ opacity: 0, scale: 0.5, rotate: -30 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
+                    className="text-lg"
+                >
+                    {currentLanguage?.flag}
+                </motion.span>
                 <span className="text-sm font-medium uppercase">{currentLanguage?.code}</span>
                 <ChevronDown 
                     size={14} 
