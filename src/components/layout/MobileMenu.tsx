@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
-import { LanguageSelector } from '../ui/LanguageSelector';
 
 interface MobileMenuProps {
     isOpen: boolean;
@@ -44,13 +43,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                         <div className="flex flex-col h-full">
                             {/* Menu Header */}
                             <div className="flex items-center justify-between p-5">
-                                <motion.span
-                                    className="text-xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                                <motion.div
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
+                                    className="neumorph-sm px-3 py-1.5"
                                 >
-                                    Menu
-                                </motion.span>
+                                    <span className="text-xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                        GR
+                                    </span>
+                                </motion.div>
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
@@ -71,8 +72,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                                         className={cn(
                                             'block px-5 py-3 rounded-xl transition-all duration-300 font-medium cursor-pointer text-center',
                                             activeSection === link.href.substring(1)
-                                                ? 'neumorph-inset text-blue-600 dark:text-blue-400'
-                                                : 'neumorph-sm text-gray-700 dark:text-gray-300'
+                                                ? 'neumorph-inset text-blue-600'
+                                                : 'neumorph-sm text-gray-300'
                                         )}
                                         initial={{ opacity: 0, x: 50 }}
                                         animate={{ opacity: 1, x: 0 }}
@@ -83,14 +84,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                                     </motion.a>
                                 ))}
                             </nav>
-
-                            {/* Language Selector in Mobile Menu */}
-                            <div className="p-5 border-t border-gray-700">
-                                <div className="flex items-center justify-between">
-                                    <span className="text-sm text-gray-400">Langue</span>
-                                    <LanguageSelector variant="minimal" />
-                                </div>
-                            </div>
                         </div>
                     </motion.div>
                 </>

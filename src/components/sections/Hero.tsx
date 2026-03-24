@@ -27,7 +27,7 @@ const techBadges = [
 ];
 
 export const Hero: React.FC<HeroProps> = ({ className }) => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     const scrollToNext = () => {
         const servicesSection = document.getElementById('services');
@@ -38,6 +38,11 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                 behavior: 'smooth'
             });
         }
+    };
+
+    const handleDownloadCV = () => {
+        const cvFile = language === 'fr' ? '/cv-gael-ramahandrisoa-fr.pdf' : '/cv-gael-ramahandrisoa-en.pdf';
+        window.open(cvFile, '_blank');
     };
 
     const containerVariants = {
@@ -132,9 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                                 variant="default"
                                 size="lg"
                                 icon={<Download size={18} />}
-                                onClick={() => {
-                                    window.open('/cv-gael-ramahandrisoa.pdf', '_blank');
-                                }}
+                                onClick={handleDownloadCV}
                             >
                                 {t('hero.cv_btn')}
                             </NeumorphButton>
