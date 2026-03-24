@@ -74,7 +74,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full right-0 mt-2 w-40 neumorph-sm rounded-xl overflow-hidden z-50"
+                        className="absolute top-full right-0 mt-2 w-30 neumorph-sm rounded-xl overflow-hidden z-50"
                     >
                         {languages.map((lang) => (
                             <button
@@ -91,9 +91,6 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                                     <span className="text-base">{lang.flag}</span>
                                     <span className="text-sm">{lang.label}</span>
                                 </div>
-                                {language === lang.code && (
-                                    <Check size={14} className="text-blue-400" />
-                                )}
                             </button>
                         ))}
                     </motion.div>
