@@ -61,7 +61,7 @@ export const Contact: React.FC = () => {
                 <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
                 <div className="absolute top-40 left-20 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl" />
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(180deg,rgba(147,51,234,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(180deg,rgba(147,51,234,0.02)_1px,transparent_1px)] bg-size-[50px_50px]" />
                 <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-blue-500 rounded-full animate-pulse" />
                 <div className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
@@ -75,12 +75,12 @@ export const Contact: React.FC = () => {
                     className="text-center mb-12 md:mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                             {t('contact.title')}
                         </span>
                         <span className="text-gray-200"> {t('contact.subtitle')}</span>
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-5" />
+                    <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-5" />
                 </motion.div>
 
                 <motion.div
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
                 >
                     <div className="neumorph-sm p-6 md:p-8 rounded-2xl">
                         <div className="text-center mb-8">
-                            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 mb-4">
+                            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-linear-to-r from-blue-500/20 to-purple-500/20 mb-4">
                                 <Send size={24} className="text-blue-500" />
                             </div>
                             <h3 className="text-2xl font-bold text-gray-200">
@@ -112,12 +112,12 @@ export const Contact: React.FC = () => {
                                     return (
                                         <div key={field.name} className="relative">
                                             <div className={cn(
-                                                "absolute left-4 transition-all duration-300 pointer-events-none",
+                                                "absolute left-4 transition-all duration-300 pointer-events-none top-1/2  -translate-y-1/2",
                                                 isFocused || hasValue 
-                                                    ? "top-2 text-xs text-blue-400 -translate-y-0" 
-                                                    : "top-1/2 -translate-y-1/2 text-gray-500"
+                                                    ? " text-blue-400 " 
+                                                    : "  text-gray-500"
                                             )}>
-                                                <Icon size={isFocused || hasValue ? 14 : 18} />
+                                                <Icon size={isFocused || hasValue ? 18 : 18} />
                                             </div>
                                             <input
                                                 type={field.type}
@@ -144,12 +144,12 @@ export const Contact: React.FC = () => {
 
                             <div className="relative">
                                 <div className={cn(
-                                    "absolute left-4 transition-all duration-300 pointer-events-none",
+                                    "absolute left-4 transition-all duration-300 pointer-events-none top-1/2  -translate-y-1/2",
                                     focusedField === 'subject' || formData.subject 
-                                        ? "top-2 text-xs text-blue-400 -translate-y-0" 
-                                        : "top-1/2 -translate-y-1/2 text-gray-500"
+                                        ? " text-xs text-blue-400" 
+                                        : " text-gray-500"
                                 )}>
-                                    <FolderOpen size={focusedField === 'subject' || formData.subject ? 14 : 18} />
+                                    <FolderOpen size={focusedField === 'subject' || formData.subject ? 18 : 18} />
                                 </div>
                                 <input
                                     type="text"
@@ -173,12 +173,12 @@ export const Contact: React.FC = () => {
 
                             <div className="relative">
                                 <div className={cn(
-                                    "absolute left-4 transition-all duration-300 pointer-events-none",
+                                    "absolute left-4 transition-all duration-300 pointer-events-none top-5",
                                     focusedField === 'message' || formData.message 
-                                        ? "top-3 text-xs text-blue-400" 
-                                        : "top-5 text-gray-500"
+                                        ? " text-xs text-blue-400" 
+                                        : " text-gray-500"
                                 )}>
-                                    <MessageSquare size={focusedField === 'message' || formData.message ? 14 : 18} />
+                                    <MessageSquare size={focusedField === 'message' || formData.message ? 18 : 18} />
                                 </div>
                                 <textarea
                                     name="message"
@@ -231,7 +231,7 @@ export const Contact: React.FC = () => {
                                         initial={{ opacity: 0, y: -10, scale: 0.95 }}
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.95 }}
-                                        className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20"
+                                        className="flex items-center gap-3 p-4 rounded-xl bg-linear-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20"
                                     >
                                         <CheckCircle size={20} className="text-green-500" />
                                         <span className="text-sm text-green-400">{t('contact.success')}</span>
@@ -242,7 +242,7 @@ export const Contact: React.FC = () => {
                                         initial={{ opacity: 0, y: -10, scale: 0.95 }}
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.95 }}
-                                        className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-red-500/10 to-rose-500/10 border border-red-500/20"
+                                        className="flex items-center gap-3 p-4 rounded-xl bg-linear-to-r from-red-500/10 to-rose-500/10 border border-red-500/20"
                                     >
                                         <AlertCircle size={20} className="text-red-500" />
                                         <span className="text-sm text-red-400">{t('contact.error')}</span>
