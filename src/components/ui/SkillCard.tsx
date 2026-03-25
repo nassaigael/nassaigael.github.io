@@ -12,7 +12,6 @@ interface SkillCardProps {
 export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId }) => {
     const isHovered = hoveredId === skill.id;
 
-    // Extraire la couleur de base sans le préfixe 'text-'
     const getColorValue = (colorClass: string) => {
         const colorMap: Record<string, string> = {
             'text-cyan-500': '#06b6d4',
@@ -76,7 +75,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId })
                 </div>
                 
                 {/* Nom de la technologie */}
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                <h3 className="text-sm font-semibold text-gray-800 dark:text-white">
                     {skill.name}
                 </h3>
                 
