@@ -75,7 +75,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId })
                 </div>
                 
                 {/* Nom de la technologie */}
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-white">
+                <h3 className="text-sm font-semibold text-white">
                     {skill.name}
                 </h3>
                 
