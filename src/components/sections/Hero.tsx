@@ -23,7 +23,7 @@ const techBadges = [
     { label: 'Node.js', icon: Globe, color: 'text-cyan-500', position: { bottom: '15%', right: '-12%' }, delay: 0.6 },
     { label: 'PostgreSQL', icon: Database, color: 'text-purple-500', position: { bottom: '20%', left: '-15%' }, delay: 1.2 },
     { label: 'Java', icon: Terminal, color: 'text-pink-500', position: { top: '30%', left: '-15%' }, delay: 1.4 },
-    { label: 'Next.js', icon: Code2, color: 'text-gray-700 dark:text-gray-300', position: { top: '-8%', left: '-8%' }, delay: 1.6 },
+    { label: 'Next.js', icon: Code2, color: 'text-white', position: { top: '-8%', left: '-8%' }, delay: 1.6 },
 ];
 
 export const Hero: React.FC<HeroProps> = ({ className }) => {
@@ -134,6 +134,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
                             </NeumorphButton>
 
                             <NeumorphButton
+                            className='text-white'
                                 variant="default"
                                 size="lg"
                                 icon={<Download size={18} />}
