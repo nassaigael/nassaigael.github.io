@@ -25,7 +25,7 @@ export const skillsData: Skill[] = [
     { id: 4, name: 'Framer Motion', icon: <SiFramer size={28} />, iconColor: 'text-purple-500', bgIcon: '✨', category: 'frontend' },
     { id: 5, name: 'HTML5', icon: <FaHtml5 size={28} />, iconColor: 'text-orange-500', bgIcon: '🌐', category: 'frontend' },
     { id: 6, name: 'CSS3', icon: <FaCss3Alt size={28} />, iconColor: 'text-blue-400', bgIcon: '🎨', category: 'frontend' },
-    { id: 7, name: 'Next.js', icon: <SiNextdotjs size={28} />, iconColor: 'text-gray-900 dark:text-white', bgIcon: '▲', category: 'frontend' },
+    { id: 7, name: 'Next.js', icon: <SiNextdotjs size={28} />, iconColor: 'text-white', bgIcon: '▲', category: 'frontend' },
     
     // Backend
     { id: 9, name: 'Node.js', icon: <FaNodeJs size={28} />, iconColor: 'text-green-600', bgIcon: '🚀', category: 'backend' },
