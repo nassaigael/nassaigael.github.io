@@ -108,13 +108,14 @@ export const Contact: React.FC = () => {
                                 {inputFields.slice(0, 2).map((field) => {
                                     const Icon = field.icon;
                                     const isFocused = focusedField === field.name;
+                                    const hasValue = formData[field.name as keyof typeof formData];
                                     return (
                                         <div key={field.name} className="relative">
                                             <div className={cn(
                                                 "absolute left-4 top-1/2 transform -translate-y-1/2 transition-all duration-300",
                                                 isFocused || formData[field.name as keyof typeof formData] ? "text-blue-500 -translate-y-7 text-xs" : "text-gray-500"
                                             )}>
-                                                <Icon size={isFocused || formData[field.name as keyof typeof formData] ? 14 : 18} />
+                                                <Icon size={isFocused || hasValue ? 14 : 18} />
                                             </div>
                                             <input
                                                 type={field.type}
