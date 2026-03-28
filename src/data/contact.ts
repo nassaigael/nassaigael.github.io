@@ -59,7 +59,7 @@ export const socialLinks: SocialLink[] = [
         name: 'GitHub',
         icon: Github,
         url: 'https://github.com/gaelramahandrisoa',
-        color: 'hover:text-gray-900 dark:hover:text-white'
+        color: 'hover:text-gray-900'
     },
     {
         name: 'LinkedIn',

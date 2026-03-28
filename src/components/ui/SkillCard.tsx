@@ -48,7 +48,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId })
             className="relative group hover:scale-110 transition-all "
         >
             <div 
-                className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none text-6xl font-bold select-none dark:opacity-10"
+                className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none text-6xl font-bold select-none"
             >
                 {skill.bgIcon}
             </div>
@@ -56,7 +56,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId })
             {/* Carte capsule */}
             <div className={cn(
                 "relative neumorph-sm rounded-2xl p-4 text-center transition-all duration-300 overflow-hidden",
-                "bg-neumorph-bg dark:bg-gray-900",
+                "bg-neumorph-bg",
                 isHovered && "shadow-neumorph-hover scale-[1.02]"
             )}>
                 {/* Icône colorée */}
@@ -66,7 +66,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill, index, hoveredId })
                 )}>
                     <div className={cn(
                         "p-2 rounded-xl transition-all duration-300",
-                        isHovered ? "bg-gray-200/50 dark:bg-white/10" : ""
+                        isHovered ? "bg-gray-200/50" : ""
                     )}>
                         <div className={cn(skill.iconColor, "transition-colors")}>
                             {skill.icon}
