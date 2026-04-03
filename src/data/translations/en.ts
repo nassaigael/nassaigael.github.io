@@ -8,7 +8,7 @@ export const en = {
 
     // Hero
     'hero.developer': 'Developer',
-    'hero.web_ai': 'Web & AI',
+    'hero.web_ai': 'Web Fullstack & AI Data Specialist',
     'hero.description': 'Fullstack developer specialized in Spring Boot (backend) and React.js with TypeScript (frontend). With a background in data processing, I build robust web applications and prepare quality datasets for AI.',
     'hero.contact_btn': 'Contact me',
     'hero.cv_btn': 'Download CV',

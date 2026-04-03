@@ -6,7 +6,6 @@ import {
     Heart,
     ArrowUp,
     Facebook,
-    Instagram,
     Send
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
@@ -17,10 +16,9 @@ interface FooterProps {
 }
 
 const socialLinks = [
-    { name: 'Facebook', icon: Facebook, url: '#', color: 'hover:text-blue-600' },
-    { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/gael-ramahandrisoa', color: 'hover:text-blue-600' },
-    { name: 'GitHub', icon: Github, url: 'https://github.com/gaelramahandrisoa', color: 'hover:text-gray-900' },
-    { name: 'Instagram', icon: Instagram, url: '#', color: 'hover:text-pink-500' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/gael.ramahandrisoa', color: 'hover:text-blue-600' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/nassaigael/', color: 'hover:text-blue-600' },
+    { name: 'GitHub', icon: Github, url: 'https://github.com/nassaigael/', color: 'hover:text-white' },
 ];
 
 const navigationLinks = [

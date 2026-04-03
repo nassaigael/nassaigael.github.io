@@ -11,14 +11,14 @@ interface HeroProps {
 }
 
 const socialLinks = [
-    { name: 'GitHub', icon: Github, url: 'https://github.com/gaelramahandrisoa', color: 'hover:text-gray-900' },
-    { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/gael-ramahandrisoa', color: 'hover:text-blue-600' },
+    { name: 'GitHub', icon: Github, url: 'https://github.com/nassaigael/', color: 'hover:text-white' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/nassaigael/', color: 'hover:text-blue-600' },
     { name: 'Email', icon: Mail, url: 'mailto:gael.ramahandrisoa@gmail.com', color: 'hover:text-red-500' },
 ];
 
 const techBadges = [
     { label: 'React', icon: Code2, color: 'text-blue-500', position: { top: '-15%', right: '-5%' }, delay: 0 },
-    { label: 'Python', icon: Terminal, color: 'text-green-500', position: { top: '15%', right: '-12%' }, delay: 0.2 },
+    { label: 'MySQL', icon: Database, color: 'text-green-500', position: { top: '15%', right: '-12%' }, delay: 0.2 },
     { label: 'TypeScript', icon: Code2, color: 'text-blue-400', position: { top: '45%', right: '-15%' }, delay: 0.4 },
     { label: 'Node.js', icon: Globe, color: 'text-cyan-500', position: { bottom: '15%', right: '-12%' }, delay: 0.6 },
     { label: 'PostgreSQL', icon: Database, color: 'text-purple-500', position: { bottom: '20%', left: '-15%' }, delay: 1.2 },
