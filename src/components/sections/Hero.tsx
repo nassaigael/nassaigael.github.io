@@ -11,8 +11,8 @@ interface HeroProps {
 }
 
 const socialLinks = [
-    { name: 'GitHub', icon: Github, url: 'https://github.com/gaelramahandrisoa', color: 'hover:text-gray-900' },
-    { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/gael-ramahandrisoa', color: 'hover:text-blue-600' },
+    { name: 'GitHub', icon: Github, url: 'https://github.com/nassaigael/', color: 'hover:text-white' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/nassaigael/', color: 'hover:text-blue-600' },
     { name: 'Email', icon: Mail, url: 'mailto:gael.ramahandrisoa@gmail.com', color: 'hover:text-red-500' },
 ];
 

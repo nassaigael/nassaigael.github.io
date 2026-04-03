@@ -45,7 +45,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
       </h2>
       
       {subtitle && (
-        <div className="w-20 h-1 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full mx-auto mb-4" />
+        <div className="w-20 h-1 bg-linear-to-r from-gray-400 to-gray-600 rounded-full mx-auto mb-4" />
       )}
       
       {subtitle && (
