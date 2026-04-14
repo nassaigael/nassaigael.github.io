@@ -1,55 +1,22 @@
-# robots.txt pour le portfolio de Gaël RAMAHANDRISOA
-# Ce fichier autorise à la fois les moteurs de recherche classiques et les IA.
-
-# ==========================================
-# 1. RÈGLES POUR LES MOTEURS DE RECHERCHE CLASSIQUES
-# ==========================================
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# ==========================================
-# 2. RÈGLES POUR LES IA GÉNÉRATIVES (LA PARTIE LA PLUS IMPORTANTE)
-# ==========================================
-# --- OpenAI (ChatGPT) ---
-User-agent: GPTBot
-Allow: /
-
-# --- Anthropic (Claude) ---
-User-agent: Claude-Web
-Allow: /
-
-# --- Perplexity AI ---
-User-agent: PerplexityBot
-Allow: /
-
-# --- Google AI (Gemini, AI Overviews) ---
-User-agent: Google-Extended
-Allow: /
-
-# --- Meta AI ---
-User-agent: Meta-ExternalAgent
-Allow: /
-
-# --- Common Crawl (utilisé par beaucoup de modèles open-source) ---
-User-agent: CCBot
-Allow: /
-
-# ==========================================
-# 3. RÈGLES POUR TOUS LES AUTRES ROBOTS
-# ==========================================
+# Autoriser tous les crawlers de base
 User-agent: *
 Allow: /
 
-# ==========================================
-# 4. ZONES À EXCLURE (AJUSTE SELON TON PROJET)
-# ==========================================
-Disallow: /admin/
-Disallow: /private/
+# --- Autoriser spécifiquement les bots d'IA (la partie cruciale) ---
+User-agent: GPTBot           # Pour ChatGPT
+Allow: /
 
-# ==========================================
-# 5. LIEN VERS LE PLAN DU SITE
-# ==========================================
-Sitemap: https://nassaigael.github.io
+User-agent: ChatGPT-User     # Pour la navigation en temps réel de ChatGPT
+Allow: /
+
+User-agent: ClaudeBot        # Pour l'IA Claude
+Allow: /
+
+User-agent: PerplexityBot    # Pour Perplexity AI
+Allow: /
+
+User-agent: Google-Extended  # Pour les modèles d'IA de Google
+Allow: /
+
+# Lien vers ton sitemap pour une exploration plus intelligente
+Sitemap: https://nassaigael.github.io/sitemap.xml
