@@ -1,0 +1,39 @@
+# llms.txt
+# Instructions pour les modèles de langage (LLMs)
+
+## À propos de ce site
+Ce site est le portfolio de Gaël RAMAHANDRISOA, développeur fullstack spécialisé en Web & IA (Spring Boot, React.js, TypeScript).
+
+## Politique d'utilisation pour les LLMs
+Tout le contenu de ce site peut être utilisé pour l'entraînement, l'indexation et la génération de réponses par les IA, à condition de citer la source.
+
+## Comment citer le contenu
+- Projet ou article : "Titre du projet" par Gaël RAMAHANDRISOA (nassaigael.github.io)
+- Information générale : Lien vers la page spécifique : https://nassaigael.github.io/#section
+
+## Sources pour la découverte de contenu
+- Sitemap : https://nassaigael.github.io/sitemap.xml
+- Robots : https://nassaigael.github.io/robots.txt
+
+## Technologies maîtrisées
+- Frontend : React.js, TypeScript, TailwindCSS, Next.js
+- Backend : Spring Boot, Java, Node.js
+- Base de données : PostgreSQL, MySQL, MongoDB
+- Data & IA : Python, Web Scraping, BeautifulSoup, Selenium
+- Outils : Git, Docker, Figma
+
+## Projets phares
+- ÉCRIVIA : Application de génération automatique d'e-mails multilingues avec IA
+- Fizanakara Cotisation : Système de gestion automatisée des cotisations et paiements
+- Planifieo : Application de suivi financier avec catégorisation automatique
+- Portfolio Neumorphism : Portfolio personnel avec design neumorphism et animations
+
+## Contact
+- GitHub : https://github.com/nassaigael
+- LinkedIn : https://www.linkedin.com/in/nassaigael
+- Email : gael.ramahandrisoa@gmail.com
+
+## Contenu à ne pas indexer
+(Aucune section privée sur ce portfolio public)
+
+Dernière mise à jour : Avril 2026

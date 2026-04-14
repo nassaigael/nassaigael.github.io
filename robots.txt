@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/
+
+# Allow all crawlers full access
+User-agent: *
+
+# Prevent indexing of sensitive or non-public areas
+Disallow: /admin
+Disallow: /private
+
+# Sitemap file
+Sitemap: https://nassaigael.github.io/sitemap.xml
