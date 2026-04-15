@@ -8,7 +8,7 @@ export const fr = {
 
     // Hero
     'hero.developer': 'Développeur',
-    'hero.web_ai': 'Web Fullstack & Spécialiste en données IA',
+    'hero.web_ai': 'Web Fullstack & Spécialiste IA Data',
     'hero.description': 'Développeur fullstack spécialisé Spring Boot (backend) et React.js avec TypeScript (frontend). Fort d’une formation en traitement de données, je conçois des applications web robustes et prépare des datasets de qualité pour l’IA.',
     'hero.contact_btn': 'Me contacter',
     'hero.cv_btn': 'Télécharger CV',
@@ -28,6 +28,16 @@ export const fr = {
     'skills.category_database': 'Base de données',
     'skills.category_tools': 'Outils',
     'skills.category_ai': 'IA & Data',
+
+    // Projects - Descriptions
+    'projects.ecrivia_desc': 'Application de génération automatique d\'e-mails multilingues avec IA pour la rédaction de contenus professionnels.',
+    'projects.fizanakara_cotisation_desc': 'Système de gestion automatisée des cotisations et paiements avec tableau de bord analytique.',
+    'projects.planifieo_desc': 'Application de suivi financier avec catégorisation automatique des dépenses et alertes personnalisées.',
+    'projects.eloria_desc': 'Site e-commerce de vêtements élégants pour femmes et accessoires. Interface moderne avec panier d\'achat et filtres de produits.',
+    'projects.fizanakara_desc': 'Site vitrine pour une association. Présentation des activités, événements et actions menées par l\'organisation.',
+    'projects.portfolio_desc': 'Portfolio personnel avec design neumorphism, dark mode et animations fluides.',
+    'projects.datascraper_desc': 'Outil de web scraping avancé pour l\'extraction et le nettoyage de données structurées.',
+    'projects.aidataset_desc': 'Plateforme de création et d\'annotation de datasets pour l\'entraînement de modèles IA.',
 
     // Projects
     'projects.title': 'Projets',

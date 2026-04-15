@@ -29,6 +29,16 @@ export const en = {
     'skills.category_tools': 'Tools',
     'skills.category_ai': 'AI & Data',
 
+    // Projects - Descriptions
+    'projects.ecrivia_desc': 'Automatic multilingual email generation application using AI for professional content writing.',
+    'projects.fizanakara_cotisation_desc': 'Automated contribution and payment management system with analytical dashboard.',
+    'projects.planifieo_desc': 'Financial tracking application with automatic expense categorization and personalized alerts.',
+    'projects.eloria_desc': 'E-commerce site for elegant women\'s clothing and accessories. Modern interface with shopping cart and product filters.',
+    'projects.fizanakara_desc': 'Landing page website for an association. Presentation of activities, events and actions carried out by the organization.',
+    'projects.portfolio_desc': 'Personal portfolio with neumorphism design, dark mode and smooth animations.',
+    'projects.datascraper_desc': 'Advanced web scraping tool for extracting and cleaning structured data.',
+    'projects.aidataset_desc': 'Platform for creating and annotating datasets for training AI models.',
+
     // Projects
     'projects.title': 'Projects',
     'projects.recent': 'Recent',
