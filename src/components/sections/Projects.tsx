@@ -12,7 +12,7 @@ import {
     Layers,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
-import { projects, statusConfig, filters } from '../../data/projects';
+import { projects, statusConfig, filters, type Project } from '../../data/projects';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const statusIcons = {
@@ -28,11 +28,9 @@ const projectDescriptionKeys: Record<number, string> = {
     4: 'projects.eloria_desc',
     5: 'projects.fizanakara_desc',
     6: 'projects.portfolio_desc',
-    7: 'projects.datascraper_desc',
-    8: 'projects.aidataset_desc',
 };
 
-export const Projects: React.FC = () => {
+const Projects: React.FC = () => {
     const { t } = useLanguage();
     const [filter, setFilter] = useState<string>('all');
     const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -58,7 +56,6 @@ export const Projects: React.FC = () => {
         planned: t('projects.status_planned'),
     };
 
-    // Fonction pour obtenir la description traduite
     const getProjectDescription = (projectId: number, defaultDescription: string): string => {
         const descriptionKey = projectDescriptionKeys[projectId];
         if (descriptionKey) {
@@ -70,19 +67,33 @@ export const Projects: React.FC = () => {
         return defaultDescription;
     };
 
-    // Vérifier si le projet a un lien de démo valide
     const hasValidDemo = (demoUrl?: string): boolean => {
         return !!demoUrl && demoUrl !== '#';
     };
 
-    // Vérifier si le projet a un lien GitHub valide
     const hasValidGithub = (githubUrl?: string): boolean => {
         return !!githubUrl && githubUrl !== '';
     };
 
+    const getCardRedirectUrl = (project: Project): string | undefined => {
+        if (hasValidDemo(project.demoUrl)) {
+            return project.demoUrl;
+        }
+        if (hasValidGithub(project.githubUrl)) {
+            return project.githubUrl;
+        }
+        return undefined;
+    };
+
+    const handleCardClick = (project: Project) => {
+        const redirectUrl = getCardRedirectUrl(project);
+        if (redirectUrl) {
+            window.open(redirectUrl, '_blank');
+        }
+    };
+
     return (
         <section id="projects" className="relative py-20 md:py-32 overflow-hidden px-4 sm:px-6 lg:px-16">
-            {/* Éléments décoratifs */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
@@ -151,6 +162,10 @@ export const Projects: React.FC = () => {
                             const translatedDescription = getProjectDescription(project.id, project.description);
                             const showDemo = hasValidDemo(project.demoUrl);
                             const showGithub = hasValidGithub(project.githubUrl);
+                            const hasRedirect = showDemo || showGithub;
+
+                            const showOnlyDemo = showDemo;
+                            const showOnlyGithub = !showDemo && showGithub;
 
                             return (
                                 <motion.div
@@ -164,14 +179,17 @@ export const Projects: React.FC = () => {
                                     onHoverEnd={() => setHoveredId(null)}
                                     className="group h-full"
                                 >
-                                    <div className={cn(
-                                        "relative overflow-hidden transition-all duration-500 flex flex-col h-full",
-                                        "neumorph-sm",
-                                        isExpanded ? "scale-[1.02]" : ""
-                                    )}>
+                                    <div 
+                                        className={cn(
+                                            "relative overflow-hidden transition-all duration-500 flex flex-col h-full",
+                                            "neumorph-sm",
+                                            isExpanded ? "scale-[1.02]" : "",
+                                            hasRedirect && "cursor-pointer"
+                                        )}
+                                        onClick={() => handleCardClick(project)}
+                                    >
                                         <div className="absolute -inset-0.5 bg-linear-to-r from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
 
-                                        {/* Section image - hauteur fixe */}
                                         <div className="relative h-56 shrink-0 overflow-hidden">
                                             <img
                                                 src={project.image}
@@ -217,7 +235,6 @@ export const Projects: React.FC = () => {
                                                 {translatedDescription}
                                             </p>
 
-                                            {/* Technologies */}
                                             <div className="flex flex-wrap gap-2 pt-2">
                                                 {project.technologies.map((tech, i) => (
                                                     <motion.span
@@ -232,7 +249,6 @@ export const Projects: React.FC = () => {
                                                 ))}
                                             </div>
 
-                                            {/* Date et nombre de technologies */}
                                             <div className="flex items-center justify-between pt-2 border-t border-gray-700">
                                                 {project.date && (
                                                     <div className="flex items-center gap-1.5 text-xs text-gray-500">
@@ -247,42 +263,36 @@ export const Projects: React.FC = () => {
                                             </div>
 
                                             <div className="flex gap-3 pt-2">
-                                                {showDemo && (
+                                                {showOnlyDemo && (
                                                     <motion.a
                                                         href={project.demoUrl}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className={cn(
-                                                            "neumorph-sm px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn",
-                                                            showGithub ? "flex-1" : "w-full",
-                                                            "text-blue-400"
-                                                        )}
+                                                        className="w-full neumorph-sm px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn text-blue-400"
                                                         whileHover={{ scale: 1.02 }}
                                                         whileTap={{ scale: 0.98 }}
+                                                        onClick={(e) => e.stopPropagation()}
                                                     >
                                                         <ExternalLink size={14} />
                                                         <span>{t('projects.demo')}</span>
                                                         <ArrowRight size={12} className="opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all" />
                                                     </motion.a>
                                                 )}
-                                                {showGithub && (
+                                                {showOnlyGithub && (
                                                     <motion.a
                                                         href={project.githubUrl}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className={cn(
-                                                            "neumorph-sm px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2",
-                                                            showDemo ? "flex-1" : "w-full",
-                                                            "text-gray-300"
-                                                        )}
+                                                        className="w-full neumorph-sm px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 text-gray-300"
                                                         whileHover={{ scale: 1.02 }}
                                                         whileTap={{ scale: 0.98 }}
+                                                        onClick={(e) => e.stopPropagation()}
                                                     >
                                                         <Github size={14} />
                                                         <span>{t('projects.code')}</span>
                                                     </motion.a>
                                                 )}
-                                                {!showDemo && !showGithub && (
+                                                {!showOnlyDemo && !showOnlyGithub && (
                                                     <div className="w-full text-center text-xs text-gray-500 italic py-2">
                                                         {t('projects.soon')}
                                                     </div>
@@ -290,7 +300,6 @@ export const Projects: React.FC = () => {
                                             </div>
                                         </div>
 
-                                        {/* Anneau de hover */}
                                         <div className={cn(
                                             "absolute inset-0 rounded-2xl pointer-events-none transition-all duration-500",
                                             hoveredId === project.id ? "ring-2 ring-blue-500/50 ring-offset-2 ring-offset-neumorph-bg" : ""
@@ -341,3 +350,5 @@ export const Projects: React.FC = () => {
         </section>
     );
 };
+
+export default Projects;
