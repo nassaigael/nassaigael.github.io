@@ -4,7 +4,9 @@ import {
     Brain, 
     Globe, 
     Shield, 
-    Cpu} from 'lucide-react';
+    Cpu,
+    BarChart3
+} from 'lucide-react';
 
 export interface Service {
     id: number;
@@ -50,12 +52,13 @@ export const services: Service[] = [
     },
     {
         id: 4,
-        titleKey: 'services.web_scraping',
-        descriptionKey: 'services.web_scraping_desc',
+        titleKey: 'services.ai_integration',
+        descriptionKey: 'services.ai_integration_desc',
         icon: Cpu,
-        iconColor: 'text-orange-500',
-        bgGradient: 'from-orange-500/20 to-red-500/20',
-        featuresKeys: ['services.feature_beautifulsoup', 'services.feature_selenium', 'services.feature_scrapy', 'services.feature_api', 'services.feature_cleaning']
+        iconColor: 'text-cyan-500',
+        bgGradient: 'from-cyan-500/20 to-blue-500/20',
+        featuresKeys: ['services.feature_ml_models', 'services.feature_deployment', 'services.feature_inference', 'services.feature_monitoring', 'services.feature_optimization_ai'],
+        popular: false
     },
     {
         id: 5,
@@ -64,10 +67,20 @@ export const services: Service[] = [
         icon: Database,
         iconColor: 'text-indigo-500',
         bgGradient: 'from-indigo-500/20 to-blue-500/20',
-        featuresKeys: ['services.feature_postgresql', 'services.feature_mongodb', 'services.feature_mysql', 'services.feature_optimization', 'services.feature_modeling']
+        featuresKeys: ['services.feature_postgresql', 'services.feature_mongodb', 'services.feature_mysql', 'services.feature_sql_optimization', 'services.feature_modeling']
     },
     {
         id: 6,
+        titleKey: 'services.seo_ref',
+        descriptionKey: 'services.seo_ref_desc',
+        icon: BarChart3,
+        iconColor: 'text-emerald-500',
+        bgGradient: 'from-emerald-500/20 to-teal-500/20',
+        featuresKeys: ['services.feature_seo_audit', 'services.feature_keywords', 'services.feature_onpage_optimization', 'services.feature_technical_seo', 'services.feature_analytics_tracking'],
+        popular: false
+    },
+    {
+        id: 7,
         titleKey: 'services.consulting',
         descriptionKey: 'services.consulting_desc',
         icon: Shield,
