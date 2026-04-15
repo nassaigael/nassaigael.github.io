@@ -70,7 +70,7 @@ export const fr = {
     'services.web_dev': 'Développement Web',
     'services.web_apps': 'Applications Web',
     'services.ai': 'Intelligence Artificielle',
-    'services.web_scraping': 'Web Scraping',
+    'services.ai_integration': 'Intégration IA',
     'services.database': 'Base de données',
     'services.consulting': 'Consulting Technique',
     'services.data_processing': 'Traitement de données',
@@ -80,7 +80,7 @@ export const fr = {
     'services.web_dev_desc': 'Création de sites web modernes, responsives et performants avec les dernières technologies.',
     'services.web_apps_desc': 'Développement d\'applications web full-stack avec API RESTful et bases de données.',
     'services.ai_desc': 'Intégration de solutions IA et machine learning pour automatiser vos processus.',
-    'services.web_scraping_desc': 'Extraction et collecte de données structurées depuis des sites web.',
+    'services.ai_integration_desc': 'Intégration de modèles d\'intelligence artificielle dans vos applications. Déploiement et monitoring de solutions IA en production.',
     'services.database_desc': 'Conception et optimisation de bases de données pour vos applications.',
     'services.consulting_desc': 'Conseil et accompagnement dans vos projets techniques et architecturaux.',
     'services.data_processing_desc': 'Extraction, nettoyage et analyse de données pour vos projets.',
@@ -107,12 +107,12 @@ export const fr = {
     'services.feature_chatbots': 'Chatbots',
     'services.feature_vision': 'Vision par ordinateur',
 
-    // Services - Features Web Scraping
-    'services.feature_beautifulsoup': 'BeautifulSoup',
-    'services.feature_selenium': 'Selenium',
-    'services.feature_scrapy': 'Scrapy',
-    'services.feature_api': 'API personnalisées',
-    'services.feature_cleaning': 'Nettoyage de données',
+    // Services - Features AI Integration
+    'services.feature_ml_models': 'Modèles ML',
+    'services.feature_deployment': 'Déploiement',
+    'services.feature_inference': 'Inférence',
+    'services.feature_monitoring': 'Monitoring',
+    'services.feature_optimization_ai': 'Optimisation',
 
     // Services - Features Database
     'services.feature_postgresql': 'PostgreSQL',
