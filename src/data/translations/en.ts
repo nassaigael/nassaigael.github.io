@@ -74,7 +74,7 @@ export const en = {
     'services.database': 'Database',
     'services.consulting': 'Technical Consulting',
     'services.data_processing': 'Data Processing',
-    'services.ai_integration': 'AI Integration',
+    'services.seo_ref': 'SEO & Web Referencing',
 
     // Services - Descriptions
     'services.web_dev_desc': 'Creation of modern, responsive and high-performance websites using the latest technologies.',
@@ -84,7 +84,7 @@ export const en = {
     'services.database_desc': 'Design and optimization of databases for your applications.',
     'services.consulting_desc': 'Consulting and support for your technical and architectural projects.',
     'services.data_processing_desc': 'Extraction, cleaning and analysis of data for your projects.',
-    'services.ai_integration_desc': 'Integration of artificial intelligence models into your applications.',
+    'services.seo_ref_desc': 'Complete SEO optimization to improve your visibility on search engines and attract qualified traffic.',
 
     // Services - Features Web Dev
     'services.feature_react': 'React / Next.js',
@@ -118,7 +118,7 @@ export const en = {
     'services.feature_postgresql': 'PostgreSQL',
     'services.feature_mongodb': 'MongoDB',
     'services.feature_mysql': 'MySQL',
-    'services.feature_optimization': 'SQL Optimization',
+    'services.feature_sql_optimization': 'SQL Optimization',
     'services.feature_modeling': 'Data Modeling',
 
     // Services - Features Consulting
@@ -135,12 +135,12 @@ export const en = {
     'services.feature_visualization': 'Visualization',
     'services.feature_analysis': 'Exploratory Analysis',
 
-    // Services - Features AI Integration
-    'services.feature_ml_models': 'ML Models',
-    'services.feature_deployment': 'Deployment',
-    'services.feature_inference': 'Inference',
-    'services.feature_monitoring': 'Monitoring',
-    'services.feature_optimization_ai': 'Optimization',
+    // Services - Features SEO & Referencing
+    'services.feature_seo_audit': 'SEO Audit',
+    'services.feature_keywords': 'Keyword Strategy',
+    'services.feature_onpage_optimization': 'On/Off Page Optimization',
+    'services.feature_technical_seo': 'Technical SEO',
+    'services.feature_analytics_tracking': 'Analytics & Tracking',
 
     // Contact
     'contact.title': "Let's talk about",
