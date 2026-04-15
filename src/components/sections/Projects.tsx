@@ -30,7 +30,7 @@ const projectDescriptionKeys: Record<number, string> = {
     6: 'projects.portfolio_desc',
 };
 
-const Projects: React.FC = () => {
+export const Projects: React.FC = () => {
     const { t } = useLanguage();
     const [filter, setFilter] = useState<string>('all');
     const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -350,5 +350,3 @@ const Projects: React.FC = () => {
         </section>
     );
 };
-
-export default Projects;
