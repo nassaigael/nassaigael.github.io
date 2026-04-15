@@ -72,7 +72,7 @@ export const en = {
     'services.ai': 'Artificial Intelligence',
     'services.ai_integration': 'AI Integration',
     'services.database': 'Database',
-    'services.consulting': 'Technical Consulting',
+    // 'services.consulting': 'Technical Consulting',
     'services.data_processing': 'Data Processing',
     'services.seo_ref': 'SEO & Web Referencing',
 
@@ -82,7 +82,7 @@ export const en = {
     'services.ai_desc': 'Integration of AI and machine learning solutions to automate your processes.',
     'services.ai_integration_desc': 'Integration of artificial intelligence models into your applications. Deploy and monitor AI solutions in production.',
     'services.database_desc': 'Design and optimization of databases for your applications.',
-    'services.consulting_desc': 'Consulting and support for your technical and architectural projects.',
+    // 'services.consulting_desc': 'Consulting and support for your technical and architectural projects.',
     'services.data_processing_desc': 'Extraction, cleaning and analysis of data for your projects.',
     'services.seo_ref_desc': 'Complete SEO optimization to improve your visibility on search engines and attract qualified traffic.',
 
@@ -122,11 +122,11 @@ export const en = {
     'services.feature_modeling': 'Data Modeling',
 
     // Services - Features Consulting
-    'services.feature_architecture': 'Software Architecture',
-    'services.feature_review': 'Code Review',
-    'services.feature_practices': 'Best Practices',
-    'services.feature_audit': 'Technical Audit',
-    'services.feature_training': 'Training',
+    // 'services.feature_architecture': 'Software Architecture',
+    // 'services.feature_review': 'Code Review',
+    // 'services.feature_practices': 'Best Practices',
+    // 'services.feature_audit': 'Technical Audit',
+    // 'services.feature_training': 'Training',
 
     // Services - Features Data Processing
     'services.feature_extraction': 'Data Extraction',

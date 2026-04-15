@@ -3,7 +3,6 @@ import {
     Database, 
     Brain, 
     Globe, 
-    Shield, 
     Cpu,
     BarChart3
 } from 'lucide-react';
@@ -79,15 +78,15 @@ export const services: Service[] = [
         featuresKeys: ['services.feature_seo_audit', 'services.feature_keywords', 'services.feature_onpage_optimization', 'services.feature_technical_seo', 'services.feature_analytics_tracking'],
         popular: false
     },
-    {
-        id: 7,
-        titleKey: 'services.consulting',
-        descriptionKey: 'services.consulting_desc',
-        icon: Shield,
-        iconColor: 'text-rose-500',
-        bgGradient: 'from-rose-500/20 to-pink-500/20',
-        featuresKeys: ['services.feature_architecture', 'services.feature_review', 'services.feature_practices', 'services.feature_audit', 'services.feature_training']
-    }
+    // {
+    //     id: 7,
+    //     titleKey: 'services.consulting',
+    //     descriptionKey: 'services.consulting_desc',
+    //     icon: Shield,
+    //     iconColor: 'text-rose-500',
+    //     bgGradient: 'from-rose-500/20 to-pink-500/20',
+    //     featuresKeys: ['services.feature_architecture', 'services.feature_review', 'services.feature_practices', 'services.feature_audit', 'services.feature_training']
+    // }
 ];
 
 export const servicesConfig = {
