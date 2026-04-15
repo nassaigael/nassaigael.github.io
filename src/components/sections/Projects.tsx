@@ -207,7 +207,7 @@ export const Projects: React.FC = () => {
                                                 <h3 className="text-xl font-bold text-gray-200 group-hover:text-blue-400 transition-colors">
                                                     {project.title}
                                                 </h3>
-                                                <Layers size={16} className="text-gray-500 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                                                <Layers size={16} className="text-gray-500 group-hover:text-blue-500 transition-colors shrink-0" />
                                             </div>
 
                                             <p className={cn(

@@ -38,7 +38,7 @@ export const projects: Project[] = [
         image: fizanakara_cotisation,
         technologies: ['Spring Boot', 'React', 'TypeScript', 'PostgreSQL'],
         status: 'completed',
-        demoUrl: '#',
+        demoUrl: 'https://fizanakara-cotisation.onrender.com',
         githubUrl: 'https://github.com/gaelramahandrisoa/fizanakara',
         date: '2025',
         featured: true
@@ -50,7 +50,7 @@ export const projects: Project[] = [
         image: plainfieo,
         technologies: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
         status: 'completed',
-        demoUrl: '#',
+        demoUrl: 'https://planifieo.onrender.com',
         githubUrl: 'https://github.com/gaelramahandrisoa/planifieo',
         date: '2025'
     },
@@ -62,19 +62,17 @@ export const projects: Project[] = [
         technologies: ['React', 'TypeScript', 'TailwindCSS', 'Context API'],
         status: 'in-progress',
         demoUrl: 'https://eloria-timael.vercel.app',
-        githubUrl: '',
         date: '2026',
         featured: false
     },
     {
         id: 5,
         title: 'FIZANAKARA',
-        description: 'Site vitrine pour une association. Présentation des activités, événements et actions menées par l\'organisation. avec ChatBot pour répondre aux questions des visiteurs.',
+        description: 'Site vitrine pour une association. Présentation des activités, événements et actions menées par l\'organisation avec ChatBot pour répondre aux questions des visiteurs.',
         image: fizanakara,
         technologies: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
         status: 'completed',
         demoUrl: 'https://fizanakara.vercel.app',
-        githubUrl: '',
         date: '2026',
         featured: false
     },
@@ -85,7 +83,8 @@ export const projects: Project[] = [
         image: project4,
         technologies: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
         status: 'in-progress',
-        githubUrl: 'https://github.com/gaelramahandrisoa/portfolio',
+        demoUrl: 'https://nassaigael.github.io',
+        githubUrl: 'https://github.com/nassaigael/nassaigael.github.io',
         date: '2026'
     }
 ];
